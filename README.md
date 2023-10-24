@@ -17,10 +17,8 @@ This repository contains source code of Embedded Control Programs and User Appli
 
 - Embedded SDK (firmware)
   - micro-Python
-
 - IDE
   - Thonny 3.3.13
-
 - Language
   - Python 3
 
