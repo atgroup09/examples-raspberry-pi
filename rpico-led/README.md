@@ -26,13 +26,10 @@
 
 - Embedded SDK (firmware)
   - micro-Python (rp2-pico-20230426-v1.20.0.uf2)
-
 - IDE
   - Thonny 3.3.13
-
 - Language
   - Python 3
-
 - Frameworks, External libraries
   - umodbus
 
