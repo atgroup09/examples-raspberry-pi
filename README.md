@@ -7,7 +7,7 @@ This repository contains source code of Embedded Control Programs and User Appli
 
 (ARM Cortex-M0+ 32-bit, Dual-Core)
 
-![rpico module](./000-images/rpico.png)
+![rpico module](./000-images/rpico-2020.png)
 
 **Hardware Platform**
 
