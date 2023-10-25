@@ -9,11 +9,11 @@ This repository contains source code of Embedded Control Programs and User Appli
 
 ![rpico module](./000-images/rpico-2020.png)
 
-**Hardware Platform**
+### Hardware Platform
 
 - RPi Pico 2020
 
-**Software Platform**
+### Software Platform
 
 - Embedded SDK (firmware)
   - micro-Python

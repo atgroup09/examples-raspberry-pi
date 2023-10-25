@@ -34,17 +34,27 @@
   - umodbus
 
 
-## rpico-led
+## rpico-tim
 
-Example: LED blink.
+Example: Timer.
 
 <!-- ![main task](./images/001.png) -->
 
 ### CORE-0
 
+**Init. Periphery**
+
+- LED
+- TIM1
+  - periodic mode
+  - freq. 1 sec
+
 **Main task**
 
-(infinite loop)
+(none)
 
-- LED blink
-  - period 2 sec
+**TIM1.tick handler-function**
+
+- increment value of global counter
+- LED toggle
+- print the core ID and value of global counter

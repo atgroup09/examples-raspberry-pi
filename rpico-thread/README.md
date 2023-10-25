@@ -34,9 +34,9 @@
   - umodbus
 
 
-## rpico-led
+## rpico-thread
 
-Example: LED blink.
+Example: Thread / Multi-core.
 
 <!-- ![main task](./images/001.png) -->
 
@@ -46,5 +46,18 @@ Example: LED blink.
 
 (infinite loop)
 
+- multithread protection
+- print the core ID
+- increment value of global counter
 - LED blink
   - period 2 sec
+
+### CORE-1
+
+**taskCore1**
+
+(infinite loop)
+
+- multithread protection
+- print the core ID
+- print value of global counter
