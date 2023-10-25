@@ -51,7 +51,8 @@ Example: Timer.
 **Main task**
 (none)
 
-**TIM1.tick handler-function**
+**TIM1.tick**
+(handler-function)
 - increment value of global counter
 - LED toggle
 - print the core ID and value of global counter
