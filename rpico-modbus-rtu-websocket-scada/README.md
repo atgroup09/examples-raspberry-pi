@@ -58,7 +58,7 @@
 
 Example: ModBus RTU Slave Server, WebSocket SCADA.
 
-![communication scheme](/images/001.png)
+![communication scheme](./images/001.png)
 
 ### CORE-0
 
@@ -89,8 +89,8 @@ Example: ModBus RTU Slave Server, WebSocket SCADA.
 - Read value of temperature sensor built-in the controller (used ADC.Ch4)
 - Write the value into INPT-register of the ModBus Slave Server
 
-![communication scheme](/images/002.png)
-![communication scheme](/images/003.png)
-![communication scheme](/images/004.png)
-![communication scheme](/images/005.png)
-![communication scheme](/images/006.png)
+![communication scheme](./images/002.png)
+![communication scheme](./images/003.png)
+![communication scheme](./images/004.png)
+![communication scheme](./images/005.png)
+![communication scheme](./images/006.png)
