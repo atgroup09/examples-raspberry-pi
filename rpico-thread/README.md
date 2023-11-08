@@ -43,9 +43,7 @@ Example: Thread / Multi-core.
 ### CORE-0
 
 **Main task**
-
 (infinite loop)
-
 - multithread protection
 - print the core ID
 - increment value of global counter
@@ -55,9 +53,7 @@ Example: Thread / Multi-core.
 ### CORE-1
 
 **taskCore1**
-
 (infinite loop)
-
 - multithread protection
 - print the core ID
 - print value of global counter

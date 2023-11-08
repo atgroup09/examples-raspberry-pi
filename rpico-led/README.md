@@ -43,8 +43,6 @@ Example: LED blink.
 ### CORE-0
 
 **Main task**
-
 (infinite loop)
-
 - LED blink
   - period 2 sec
