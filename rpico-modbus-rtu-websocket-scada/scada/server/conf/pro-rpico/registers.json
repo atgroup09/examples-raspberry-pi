@@ -1,0 +1,7 @@
+[{ "ID":1,  "Addr":1, "Class":"disc", "Type":"bool", "Allow":"r|h",   "Var":"LED_STATUS" },
+ { "ID":2,  "Addr":1, "Class":"coil", "Type":"bool", "Allow":"r|w|h", "Var":"LED_CMD" },
+ { "ID":3,  "Addr":1, "Class":"inpt", "Type":"word", "Allow":"r|h",   "Var":"TEMPw0" },
+ { "ID":4,  "Addr":2, "Class":"inpt", "Type":"word", "Allow":"r|h",   "Var":"TEMPw1" },
+ { "ID":5,  "Addr":1, "Class":"hold", "Type":"word", "Allow":"r|w|h", "Var":"USER_16BIT" },
+ { "ID":6,  "Class":"calc", "Type":"float", "Allow":"r|h", "Var":"TEMP", "Alg":"float", "Targets":[3,4], "Round":2 }
+]

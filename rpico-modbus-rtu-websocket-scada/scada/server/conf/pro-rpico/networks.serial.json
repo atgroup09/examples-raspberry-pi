@@ -1,0 +1,15 @@
+[{"ID":1,
+  "ProtoComm":"serial",
+  "ProtoData":"modbus_rtu",
+  "Port":4,
+  "PortPref":"COM",
+  "PortDev":"COM4",
+  "Spd":115200,
+  "Prty":"None",
+  "DataBits":8,
+  "StopBits":1,
+  "Mode":"RS232",
+  "Allow":1,
+  "Devices":"D:\\projects\\server\\wslogger\\conf\\pro-rpico\\devices.json"
+  }
+]
