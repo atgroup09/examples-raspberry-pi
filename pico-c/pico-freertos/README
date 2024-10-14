@@ -1,0 +1,25 @@
+FreeRTOS-KernelV11.1.0 (SMP is supported)
+
+
+This directory provides a FreeRTOS-Kernel port that can be used with the Raspberry Pi Pico SDK. It supports:
+
+ * Simple CMake INTERFACE libraries, to provide the FreeRTOS-Kernel and also the individual allocator types, without copying code into the user's project.
+ * Running the FreeRTOS-Kernel and tasks on either core 0 or core 1
+ * Use of SDK synchronization primitives (such as mutexes, semaphores, queues from pico_sync) between FreeRTOS tasks and code executing on the other core, or in IRQ handlers.
+
+==================
+
+1. Copy base sources:
+   FreeRTOS/Source/include/*.h > project/system/freertos/include
+   FreeRTOS/Source/*.c         > project/system/freertos/src
+
+2. Copy portable sources (for GCC and ARM-CM4+FPU):
+   FreeRTOS/Source/portable/ThirdParty/GCC/RP2040/include/*.h > project/system/freertos/include
+   FreeRTOS/Source/portable/ThirdParty/GCC/RP2040/*.c         > project/system/freertos/src
+
+3. Copy memory manager sources:
+   FreeRTOS/Source/portable/MemMang/heap_1.c > project/system/freertos/src
+
+4. Copy configuration template:
+   FreeRTOS/Demo/ThirdParty/Community-Supported/CORTEX_M0+_RP2040/Standard/FreeRTOSConfig.h > project/include
+   

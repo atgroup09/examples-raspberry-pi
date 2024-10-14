@@ -1,0 +1,12 @@
+*.lst
+*.hex
+*.srec
+*.o
+*.o.*
+*.a
+*.s
+/Debug/*
+*Release*
+*Export*
+.metadata*
+/export/
