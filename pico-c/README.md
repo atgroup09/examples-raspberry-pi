@@ -18,7 +18,7 @@
 
 ### Examples
 
-IDE Eclipsó pre-configured workspace
+IDE Eclipse (pre-configured workspace)
 - **pico-freertos** - FreeRTOS includes (source code)
 - **pico-sdk** - PICO-SDK C / HAL - Hardware Abstract Layer (source code)
 - **pico-tools** - external build tools (elf2uf2, debug, ...)
