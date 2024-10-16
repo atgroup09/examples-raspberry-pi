@@ -4,7 +4,7 @@
 
 ### Hardware Platform
 
-- RPi Pico 2020
+- RPi Pico 2040
   - ARM Cortex-M0+ 32-bit RISC, Dual-Core
   - System Clock 133 MHz
   - FLASH 2 MB
@@ -31,46 +31,48 @@
 - RTOS
   - FreeRTOS-KernelV11.1.0 (SMP is supported)
 
-## Example: rp2040-c-freertos-smp-dualcore-affinity
-LED + UART + RTC + FreeRTOS (Symmetric Multiprocessing - SMP, dualcore mode, with affinity-set)
+## Example: rp2040-c-freertos-amp-nonrtos
+LED + UART + RTC + AMP (Asymmetric Multiprocessing: RTOS and nonRTOS)
+
+![scheme](./README-SCHEME.png)
 
 Tasks:
-- T_UART0
-  - blocked (waiting for message in UART0.Queue)
-  - read UART0.Queue and print received task-info
-  - pinned to CORE.0
 - T_LED
   - blocked (waiting for end of delay)
   - LED.toggle and send the task-info info UART0.Queue
-  - pinned to CORE.1
-- T_SMP_A
+  - CORE.0 - FreeRTOS
+- T_DEMO_A
   - blocked (waiting for end of delay)
-  - send the task-info info UART0.Queue
-  - pinned to CORE.1
-- T_SMP_B
+  - send the task-info info TASK_UART0_Q
+  - CORE.0 - FreeRTOS
+- T_DEMO_B
   - blocked (waiting for end of delay)
-  - send the task-info info UART0.Queue
-  - pinned to CORE.1
-- T_SMP_C
+  - send the task-info info TASK_UART0_Q
+  - CORE.0 - FreeRTOS
+- T_DEMO_C
   - blocked (waiting for end of delay)
-  - send the task-info info UART0.Queue
-  - not pinned to any core, can run on either core (defines RTOS-scheduler)
-- T_SMP_D
+  - send the task-info info TASK_UART0_Q
+  - CORE.0 - FreeRTOS
+- T_DEMO_D
   - blocked (waiting for end of delay)
-  - send the task-info info UART0.Queue
-  - not pinned to any core, can run on either core (defines RTOS-scheduler)
-
-Events:
-- RTC.Alarm
-  - send the task-info info Queue
-  - not pinned to any core, can run on either core
-
-Shared resources:
-- RTC.datetime
-  - thread-safe access via a mutex/semaphore
+  - send the task-info info TASK_UART0_Q
+  - CORE.0 - FreeRTOS
+- T_RTC_ALARM
+  - hardware IRQ / event
+  - send the task-info info TASK_UART0_Q
+  - CORE.0 - FreeRTOS
+- T_UART0
+  - blocked (waiting for message in TASK_UART0_Q)
+  - read TASK_UART0_Q and print received task-info
+  - CORE.1 - nonRTOS
 
 Each task send the info into UART0:
 - current datetime from RTC
 - its name
 - the core (0, 1) that it is currently running on
-- the core affinity mask (-1, 1, 2, 3)
+
+Shared resources:
+- Multi-core
+  - thread-safe communication via nonRTOS-queue (TASK_UART0_Q)
+- RTC.datetime
+  - thread-safe access via RTOS-mutex/semaphore (TASK_RTC_MTX)
