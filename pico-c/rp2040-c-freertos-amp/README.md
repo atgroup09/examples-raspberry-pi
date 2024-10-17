@@ -31,7 +31,7 @@
 - RTOS
   - FreeRTOS-KernelV11.1.0 (SMP is supported)
 
-## Example: rp2040-c-freertos-amp-nonrtos
+## Example: rp2040-c-freertos-amp
 LED + UART + RTC + AMP (Asymmetric Multiprocessing: RTOS and nonRTOS)
 
 ![scheme](./README-SCHEME.png)

@@ -31,17 +31,33 @@
 - RTOS
   - FreeRTOS-KernelV11.1.0 (SMP is supported)
 
-## Example: rp2040-c-freertos-smp-dualcore
-> LED + UART + RTC + FreeRTOS (SMP in dualcore mode)
+## Example: rp2040-c-freertos-smp-affinity
+LED + UART + RTC + FreeRTOS (Symmetric Multiprocessing - SMP, dualcore mode, with affinity-set)
 
 Tasks:
 - T_UART0
   - blocked (waiting for message in UART0.Queue)
   - read UART0.Queue and print received task-info
-  - not pinned to any core, can run on either core (defines RTOS-scheduler)
+  - pinned to CORE.0
 - T_LED
   - blocked (waiting for end of delay)
   - LED.toggle and send the task-info info UART0.Queue
+  - pinned to CORE.1
+- T_SMP_A
+  - blocked (waiting for end of delay)
+  - send the task-info info UART0.Queue
+  - pinned to CORE.1
+- T_SMP_B
+  - blocked (waiting for end of delay)
+  - send the task-info info UART0.Queue
+  - pinned to CORE.1
+- T_SMP_C
+  - blocked (waiting for end of delay)
+  - send the task-info info UART0.Queue
+  - not pinned to any core, can run on either core (defines RTOS-scheduler)
+- T_SMP_D
+  - blocked (waiting for end of delay)
+  - send the task-info info UART0.Queue
   - not pinned to any core, can run on either core (defines RTOS-scheduler)
 
 Events:
