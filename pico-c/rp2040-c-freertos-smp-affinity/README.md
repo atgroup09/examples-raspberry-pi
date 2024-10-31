@@ -1,10 +1,15 @@
-# examples-raspberry-pi
+# Raspberry Pi Pico
 
-## Raspberry Pi Pico
+# sdk-c
+SDK C: source code, examples
 
-### Hardware Platform
+![rpico-software-platform](../rpico.png)
 
-- RPi Pico 2020
+### RPICO
+
+**Hardware Platform**
+
+- MCU RP2040
   - ARM Cortex-M0+ 32-bit RISC, Dual-Core
   - System Clock 133 MHz
   - FLASH 2 MB
@@ -20,21 +25,22 @@
   - SWD 1x
   - Temperature sensor 1x (built-in, analog, connected to ADC.Ch4)
 
-### Software Platform
+**Software Platform**
 
 - Embedded SDK (firmware)
   - pico-sdk-c
 - IDE
-  - Eclipse / GCC-ARM-NONE-EABI
+  - Eclipse + cross-compiler gcc-arm-none-eabi
 - Language
   - C
-- RTOS
-  - FreeRTOS-KernelV11.1.0 (SMP is supported)
+- Frameworks, External libraries and tools
+  - FreeRTOS-KernelV11.1.0 (with SMP)
+  - elf2uf2 (elf to uf2 converter)
 
-## Example: rp2040-c-freertos-smp-affinity
+### Example: rp2040-c-freertos-smp-affinity
 LED + UART + RTC + FreeRTOS (Symmetric Multiprocessing - SMP, dualcore mode, with affinity-set)
 
-Tasks:
+Tasks
 - T_UART0
   - blocked (waiting for message in UART0.Queue)
   - read UART0.Queue and print received task-info
@@ -60,16 +66,16 @@ Tasks:
   - send the task-info info UART0.Queue
   - not pinned to any core, can run on either core (defines RTOS-scheduler)
 
-Events:
+Events
 - RTC.Alarm
   - send the task-info info Queue
   - not pinned to any core, can run on either core
 
-Shared resources:
+Shared resources
 - RTC.datetime
   - thread-safe access via a mutex/semaphore
 
-Each task send the info into UART0:
+Each task send the info into UART0
 - current datetime from RTC
 - its name
 - the core (0, 1) that it is currently running on

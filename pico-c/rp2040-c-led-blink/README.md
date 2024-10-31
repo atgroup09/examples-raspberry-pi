@@ -1,10 +1,15 @@
-# examples-raspberry-pi
+# Raspberry Pi Pico
 
-## Raspberry Pi Pico
+# sdk-c
+SDK C: source code, examples
 
-### Hardware Platform
+![rpico-software-platform](../rpico.png)
 
-- RPi Pico 2040
+### RPICO
+
+**Hardware Platform**
+
+- MCU RP2040
   - ARM Cortex-M0+ 32-bit RISC, Dual-Core
   - System Clock 133 MHz
   - FLASH 2 MB
@@ -20,23 +25,23 @@
   - SWD 1x
   - Temperature sensor 1x (built-in, analog, connected to ADC.Ch4)
 
-### Software Platform
+**Software Platform**
 
 - Embedded SDK (firmware)
   - pico-sdk-c
 - IDE
-  - Eclipse / GCC-ARM-NONE-EABI
+  - Eclipse + cross-compiler gcc-arm-none-eabi
 - Language
   - C
-- RTOS
-  - None (baremetal)
+- Frameworks, External libraries and tools
+  - elf2uf2 (elf to uf2 converter)
 
-## Example: rp2040-c-led-blink
-> LED
+### Example: rp2040-c-led-blink
+LED blink (nonRTOS - BareMetal)
 
-Main function:
-- LED init.
-- main cycle
+- Main function
+  - LED init
+  - main cycle
 
-Main cycle:
-- LED blink.
+- Main cycle
+  - LED blink

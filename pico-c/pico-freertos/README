@@ -1,4 +1,4 @@
-FreeRTOS-KernelV11.1.0 (SMP is supported)
+FreeRTOS-KernelV11.1.0 (with SMP - Symmetric Multiprocessing, dualcore mode)
 
 
 This directory provides a FreeRTOS-Kernel port that can be used with the Raspberry Pi Pico SDK. It supports:

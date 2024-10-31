@@ -10,8 +10,8 @@
 void PlcUART0_Init(void)
 {
 	//configure GPIO
-	gpio_set_function(PLC_UART0_RX_PIN, GPIO_FUNC_UART);
-	gpio_set_function(PLC_UART0_TX_PIN, GPIO_FUNC_UART);
+	gpio_set_function(0, GPIO_FUNC_UART);
+	gpio_set_function(1, GPIO_FUNC_UART);
 
 	//set data format
 	uart_set_format(PLC_UART0, PLC_UART0_DATABITS, PLC_UART0_STOPBITS, PLC_UART0_PARITY);

@@ -1,12 +1,15 @@
-# examples-raspberry-pi
+# Raspberry Pi Pico
 
-## Raspberry Pi Pico
+## sdk-python
+SDK Python: source code, example
 
-![rpico module](../000-images/rpico-2020.png)
+![rpico module](../rpico.png)
 
-### Hardware Platform
+### RPICO
 
-- RPi Pico 2020
+**Hardware Platform**
+
+- MCU RP2040
   - ARM Cortex-M0+ 32-bit RISC, Dual-Core
   - System Clock 133 MHz
   - FLASH 2 MB
@@ -22,10 +25,10 @@
   - SWD 1x
   - Temperature sensor 1x (built-in, analog, connected to ADC.Ch4)
 
-### Software Platform
+**Software Platform**
 
 - Embedded SDK (firmware)
-  - micro-Python (rp2-pico-20230426-v1.20.0.uf2)
+   - micro-Python (rp2-pico-20230426-v1.20.0.uf2)
 - IDE
   - Thonny 3.3.13
 - Language
@@ -33,27 +36,20 @@
 - Frameworks, External libraries
   - umodbus
 
+### Example: Thread / Multi-core
 
-## rpico-thread
+**CORE-0**
 
-Example: Thread / Multi-core.
+- Main task (infinite loop)
+  - multithread protection
+  - print the core ID
+  - increment value of global counter
+  - LED blink
+    - period 2 sec
 
-<!-- ![main task](./images/001.png) -->
+**CORE-1**
 
-### CORE-0
-
-**Main task**
-(infinite loop)
-- multithread protection
-- print the core ID
-- increment value of global counter
-- LED blink
-  - period 2 sec
-
-### CORE-1
-
-**taskCore1**
-(infinite loop)
-- multithread protection
-- print the core ID
-- print value of global counter
+- taskCore1 (infinite loop)
+  - multithread protection
+  - print the core ID
+  - print value of global counter

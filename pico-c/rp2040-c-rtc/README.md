@@ -1,10 +1,15 @@
-# examples-raspberry-pi
+# Raspberry Pi Pico
 
-## Raspberry Pi Pico
+# sdk-c
+SDK C: source code, examples
 
-### Hardware Platform
+![rpico-software-platform](../rpico.png)
 
-- RPi Pico 2040
+### RPICO
+
+**Hardware Platform**
+
+- MCU RP2040
   - ARM Cortex-M0+ 32-bit RISC, Dual-Core
   - System Clock 133 MHz
   - FLASH 2 MB
@@ -20,35 +25,35 @@
   - SWD 1x
   - Temperature sensor 1x (built-in, analog, connected to ADC.Ch4)
 
-### Software Platform
+**Software Platform**
 
 - Embedded SDK (firmware)
   - pico-sdk-c
 - IDE
-  - Eclipse / GCC-ARM-NONE-EABI
+  - Eclipse + cross-compiler gcc-arm-none-eabi
 - Language
   - C
-- RTOS
-  - None (baremetal)
+- Frameworks, External libraries and tools
+  - FreeRTOS-KernelV11.1.0 (with SMP)
+  - elf2uf2 (elf to uf2 converter)
 
 ## Example: rp2040-c-rtc
-> LED + UART + RTC
+LED + UART + RTC (nonRTOS - BareMetal)
 
+- Main function
+  - LED init
+  - UART0 init
+  - RTC init
+  - main cycle
 
-Main function
-- LED init.
-- UART0 init.
-- RTC init.
-- main cycle
+- Main cycle
+  - execute UART0 task
+  - execute LED task
 
-Main cycle
 - UART0 task
+  - print init-information (on first execution)
+  - print constant string "TASK.UART"
+
 - LED task
-
-UART0 task
-- print init-information (on first execution)
-- print constant string "TASK.UART"
-
-LED task
-- LED toggle
-- sleep on PLC_LED_USER_BLINK_PERIOD
+  - LED toggle
+  - sleep on PLC_LED_USER_BLINK_PERIOD

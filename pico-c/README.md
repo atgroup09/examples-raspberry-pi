@@ -1,29 +1,20 @@
-# examples-raspberry-pi
+# Raspberry Pi Pico
 
-## PICO-SDK-C
+# sdk-c
+SDK C: source code, examples
 
-![rpico-software-platform](./000-IMAGES/rp2040-sw-c.png)
+![rpico-software-platform](rpico.png)
 
 - IDE
-  - Eclipse
+  - Eclipse (pre-configured workspace)
 - CROSS-COMPILER
   - arm-none-eabi-gcc
 - SDK
-  - pico-sdk-c
+  - pico-sdk-c (pico-sdk)
 - LANGUAGE
   - C
 - MULTITASKING
   - IRQ / events
-  - FreeRTOS
-
-### Examples
-
-IDE Eclipse (pre-configured workspace)
-- **pico-freertos** - FreeRTOS includes (source code)
-- **pico-sdk** - PICO-SDK C / HAL - Hardware Abstract Layer (source code)
-- **pico-tools** - external build tools (elf2uf2, debug, ...)
-- **rp2040-c-led-blink** - example project (source code)
-- **rp2040-c-uart** - example project (source code)
-- **rp2040-c-rtc** - example project (source code)
-- **rp2040-c-freertos-smp-dualcore** - example project (source code)
-- **rp2040-c-freertos-smp-dualcore-affinity** - example project (source code)
+  - FreeRTOS (pico-freertos)
+- EXTERNAL BUILD TOOLS
+  - elf2uf2, debug, ... (pico-tools)
